@@ -39,3 +39,77 @@ AI assistance was used only to clarify networking concepts and provide examples 
 The subnetting logic—based on CIDR to efficiently divide an address space into the required number of hosts and subnets—was learned from the ITDose22 videos.
 
 The project focuses on configuring IP addresses, subnet masks, default gateways, and static routes to make networks function correctly. These tasks are part of the TCP/IP stack, which is a set of protocols that enables data communication over a network. TCP (Transmission Control Protocol) ensures reliable delivery of data, while IP (Internet Protocol) handles addressing and routing. By mastering subnetting and network configuration in this project, you ensure that data can travel correctly between hosts, which is the foundation for TCP/IP communication.
+
+
+
+
+
+
+1. Technical definitions (correct and simple)
+
+IP (Internet Protocol)
+A protocol responsible for addressing and routing data packets so they can travel from a source to a destination across networks.
+
+TCP (Transmission Control Protocol)
+A protocol that ensures reliable data delivery by checking errors, ordering packets, and retransmitting lost data.
+
+Network IP
+The part of an IP address that identifies the network a device belongs to.
+
+Subnet Mask
+A value used to separate the network part from the host part of an IP address.
+
+Default Gateway
+The router that forwards traffic to other networks when the destination is outside the local network.
+
+Broadcast Address
+A special address used to send data to all devices within the same network.
+
+
+Imagine the internet as a large city delivery system.
+An IP address is like a full home address written on a package—it tells where the package should go. The network IP is the neighborhood name, while the rest of the address is the house number. The subnet mask is the rule that tells delivery workers which part of the address refers to the neighborhood and which part refers to the house.
+
+When a package needs to leave the neighborhood, it goes through the default gateway, which is like the main gate or road exit connecting the neighborhood to the rest of the city. If a message needs to reach everyone in the neighborhood, it is sent to the broadcast address, similar to making an announcement over a loudspeaker.
+
+Finally, IP makes sure the package knows where to go, while TCP acts like a responsible delivery service that checks the package arrived correctly, in the right order, and resends it if something was lost.
+
+Addressing
+
+Network addressing is the method used to uniquely identify devices on a network so data can be sent to the correct destination. In TCP/IP networks, this is done using IP addresses, which allow devices to locate and communicate with each other.
+
+Router
+
+A router is a network device that connects different networks together and forwards data packets between them based on IP addresses. It decides the best path for data to reach a destination outside the local network.
+
+Switch
+
+A switch is a network device that connects devices within the same local network and forwards data based on MAC addresses. Its main role is to ensure data is delivered only to the intended device inside the network.
+
+Host
+
+A host is any device on a network that has an IP address and can send or receive data.
+Examples of hosts include computers, servers, smartphones, printers, and IP cameras.
+A host is an endpoint in communication, meaning it is the source or destination of data, not a device that only forwards traffic.
+
+
+Think of a company building.
+Each employee has a desk number—this is addressing, because it uniquely identifies where someone is located.
+
+A switch is like the office floor manager. When a document needs to go from one employee to another on the same floor, the manager knows exactly which desk to deliver it to and doesn’t bother everyone else.
+
+A router is like the reception desk at the building entrance. When a document needs to be sent to another building or another company, it must go through reception, which decides where to send it next.
+
+In this setup, addressing ensures everyone can be found, switches handle communication inside the same area, and routers handle communication between different areas.
+
+
+Routing Table
+
+A routing table is a data table stored in a router that lists destination networks, the next hop, and the interface to use to forward packets.
+Routers use the routing table to decide where to send data so it reaches the correct network.
+
+2. Life example
+
+Continuing the same city and building analogy:
+The routing table is like a directory or map kept at the reception desk of a building. When a package arrives, the receptionist checks the map to decide which road or exit the package should take to reach another neighborhood or building.
+
+If the destination is inside the same building, the receptionist doesn’t use the map. If it’s outside, the map tells where to send it next.
