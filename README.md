@@ -117,3 +117,69 @@ First, IPv4 addresses are traditionally classified into three main classes: A, B
 
 To calculate the number of usable host addresses in a network, use the formula:
 
+Usable Hosts = 2^n − 2
+
+Where n = number of host bits. The subtraction of 2 accounts for the network address and broadcast address.
+
+| Class | CIDR | Subnet Mask       | Host Bits (n) | Usable Hosts |
+|-------|------|-----------------|---------------|--------------|
+| A     | /8   | 255.0.0.0       | 24            | 16,777,214   |
+| B     | /16  | 255.255.0.0     | 16            | 65,534       |
+| C     | /24  | 255.255.255.0   | 8             | 254          |
+
+---
+
+## Subnetting
+Subnetting divides a network into smaller subnets by borrowing bits from the host portion.
+
+- **Number of subnets:** `2^x` (x = number of borrowed bits)  
+- **Block size:** `256 − Subnet Mask value in the subnetted octet`  
+
+| Borrowed Bits | Binary Mask | Decimal Value |
+|---------------|------------|---------------|
+| 1             | 10000000   | 128           |
+| 2             | 11000000   | 192           |
+| 3             | 11100000   | 224           |
+| 4             | 11110000   | 240           |
+| 5             | 11111000   | 248           |
+| 6             | 11111100   | 252           |
+
+**How to read the table:**  
+- Bits are borrowed from left to right.  
+- Add the decimal values of borrowed bits.  
+- The result becomes the new subnet mask value in that octet.
+
+---
+
+### Quick Example
+Start with a Class C network (/24):  
+
+- Host bits = 8 (default)  
+- Borrow 2 bits → new subnet mask = /26  
+- Number of subnets: `2^2 = 4`  
+- Remaining host bits = 8 − 2 = 6  
+- Usable hosts per subnet: `2^6 − 2 = 62`  
+
+**Subnets:**
+
+Subnet 1: 192.168.1.0 - 192.168.1.63
+Subnet 2: 192.168.1.64 - 192.168.1.127
+Subnet 3: 192.168.1.128 - 192.168.1.191
+Subnet 4: 192.168.1.192 - 192.168.1.255
+
+
+Each subnet can host 62 devices, with network and broadcast addresses reserved.
+
+---
+
+### IP Addressing / Subnet Mask Example
+```plaintext
+IP Address: 192.168.1.10
+Subnet Mask: 255.255.255.0 (/24)
+
+Network Part      Host Part
+[192.168.1]      [10]
+
+Network = 192.168.1.0
+Broadcast = 192.168.1.255
+Usable hosts = 192.168.1.1 → 192.168.1.254
