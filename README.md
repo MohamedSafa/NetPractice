@@ -4,7 +4,6 @@
 **NetPractice** is a hands-on networking project featuring 10 progressive levels that teach essential computer networking fundamentals. Through interactive problem-solving, you'll master TCP/IP addressing, subnet masks, default gateways and routing by troubleshooting and configuring non-functioning network diagrams. 
 
 **Networking Concepts Covered:**
-This project covers the following networking fundamentals:
 
 - IPv4 addressing  
 - Subnetting and CIDR notation  
