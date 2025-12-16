@@ -162,10 +162,10 @@ Start with a Class C network (/24):
 
 **Subnets:**
 
-Subnet 1: 192.168.1.0 - 192.168.1.63
-Subnet 2: 192.168.1.64 - 192.168.1.127
-Subnet 3: 192.168.1.128 - 192.168.1.191
-Subnet 4: 192.168.1.192 - 192.168.1.255
+-Subnet 1: 192.168.1.0 - 192.168.1.63
+-Subnet 2: 192.168.1.64 - 192.168.1.127
+-Subnet 3: 192.168.1.128 - 192.168.1.191
+-Subnet 4: 192.168.1.192 - 192.168.1.255
 
 
 Each subnet can host 62 devices, with network and broadcast addresses reserved.
